@@ -17,7 +17,7 @@ const translations = {
     name: "Your name",
     successMessage: "Your message has been sent! I will get back to you soon.",
     locationValue: "Online / In person",
-    phoneValue: "+7 (000) 000-00-00",
+    phoneValue: "+7 (902) 263-79-54",
     messagePlaceholder: "Tell me briefly about what brought you here and what you'd like to work on",
   },
   de: {
@@ -31,7 +31,7 @@ const translations = {
     name: "Ihr Name",
     successMessage: "Ihre Nachricht wurde gesendet! Ich melde mich bald bei Ihnen.",
     locationValue: "Online / Persönlich",
-    phoneValue: "+7 (000) 000-00-00",
+    phoneValue: "+7 (902) 263-79-54",
     messagePlaceholder: "Erzählen Sie mir kurz, was Sie hierher geführt hat",
   },
   ru: {
@@ -45,7 +45,7 @@ const translations = {
     name: "Ваше имя",
     successMessage: "Сообщение отправлено! Я свяжусь с вами в ближайшее время.",
     locationValue: "Онлайн / Очно",
-    phoneValue: "+7 (000) 000-00-00",
+    phoneValue: "+7 (902) 263-79-54",
     messagePlaceholder: "Расскажите кратко, что привело вас сюда и с чем хотите поработать",
   },
 }
@@ -84,7 +84,7 @@ export default function Contact({ language }: ContactProps) {
             </div>
             <div>
               <small className="font-medium text-charcoal/70 mb-2 block">{t.phone}</small>
-              <p className="text-charcoal">{t.phoneValue}</p>
+              <a href="tel:+79022637954" className="text-charcoal hover:text-gold transition-colors">{t.phoneValue}</a>
             </div>
             <div>
               <small className="font-medium text-charcoal/70 mb-2 block">{t.location}</small>
