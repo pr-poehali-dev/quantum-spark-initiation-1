@@ -16,88 +16,33 @@ const translations = {
   },
 }
 
+const photos = [
+  {
+    id: 1,
+    image: "https://cdn.poehali.dev/projects/d91b2ad5-c443-4d26-931c-a3d6914ae157/bucket/1f90c268-e05c-437e-89d3-9404d84b3135.jpeg",
+    title: { ru: "Портрет", en: "Portrait", de: "Porträt" },
+  },
+  {
+    id: 2,
+    image: "https://cdn.poehali.dev/projects/d91b2ad5-c443-4d26-931c-a3d6914ae157/bucket/9693913a-4089-4d3d-87c1-9532e82beed0.jpeg",
+    title: { ru: "Фото 2", en: "Photo 2", de: "Foto 2" },
+  },
+  {
+    id: 3,
+    image: "https://cdn.poehali.dev/projects/d91b2ad5-c443-4d26-931c-a3d6914ae157/bucket/d946359b-6269-4e67-9e19-c10bcab6eea8.jpeg",
+    title: { ru: "Фото 3", en: "Photo 3", de: "Foto 3" },
+  },
+  {
+    id: 4,
+    image: "https://cdn.poehali.dev/projects/d91b2ad5-c443-4d26-931c-a3d6914ae157/bucket/ceb1a6b2-d1c8-4a36-8e36-7f0fa5d80fcd.jpeg",
+    title: { ru: "Фото 4", en: "Photo 4", de: "Foto 4" },
+  },
+]
+
 const galleryItems = {
-  en: [
-    {
-      id: 1,
-      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DSCF3862.JPG-QFjEqVJxprhU4vjLcesRXlZsTk7pRM.jpeg",
-      title: "Archway Portrait",
-    },
-    {
-      id: 2,
-      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DSCF3805.JPG-yq7ymSGUhJV4rq9yyyquEOMeXXYLDp.jpeg",
-      title: "Classical Courtyard",
-    },
-    {
-      id: 3,
-      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DSCF3938.JPG-OmXjCML5NpcJKstfM3mOWBFPt1HDzH.jpeg",
-      title: "Tunnel Lights",
-    },
-    {
-      id: 4,
-      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DSCF3768.JPG-Q3wacl3wQVQUhGT4jgw6Rf3OVCni3R.jpeg",
-      title: "Piano Moment",
-    },
-    {
-      id: 5,
-      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DSCF3917.JPG-iPCjoD8pZGUcg5qzfRnrkOrb14tK1E.jpeg",
-      title: "Urban Gallery",
-    },
-  ],
-  de: [
-    {
-      id: 1,
-      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DSCF3862.JPG-QFjEqVJxprhU4vjLcesRXlZsTk7pRM.jpeg",
-      title: "Bogenportrat",
-    },
-    {
-      id: 2,
-      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DSCF3805.JPG-yq7ymSGUhJV4rq9yyyquEOMeXXYLDp.jpeg",
-      title: "Klassischer Innenhof",
-    },
-    {
-      id: 3,
-      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DSCF3938.JPG-OmXjCML5NpcJKstfM3mOWBFPt1HDzH.jpeg",
-      title: "Tunnellichter",
-    },
-    {
-      id: 4,
-      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DSCF3768.JPG-Q3wacl3wQVQUhGT4jgw6Rf3OVCni3R.jpeg",
-      title: "Am Klavier",
-    },
-    {
-      id: 5,
-      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DSCF3917.JPG-iPCjoD8pZGUcg5qzfRnrkOrb14tK1E.jpeg",
-      title: "Stadtgalerie",
-    },
-  ],
-  ru: [
-    {
-      id: 1,
-      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DSCF3862.JPG-QFjEqVJxprhU4vjLcesRXlZsTk7pRM.jpeg",
-      title: "Портрет в арке",
-    },
-    {
-      id: 2,
-      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DSCF3805.JPG-yq7ymSGUhJV4rq9yyyquEOMeXXYLDp.jpeg",
-      title: "Классический двор",
-    },
-    {
-      id: 3,
-      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DSCF3938.JPG-OmXjCML5NpcJKstfM3mOWBFPt1HDzH.jpeg",
-      title: "Огни туннеля",
-    },
-    {
-      id: 4,
-      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DSCF3768.JPG-Q3wacl3wQVQUhGT4jgw6Rf3OVCni3R.jpeg",
-      title: "За роялем",
-    },
-    {
-      id: 5,
-      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DSCF3917.JPG-iPCjoD8pZGUcg5qzfRnrkOrb14tK1E.jpeg",
-      title: "Городская галерея",
-    },
-  ],
+  en: photos.map((p) => ({ id: p.id, image: p.image, title: p.title.en })),
+  de: photos.map((p) => ({ id: p.id, image: p.image, title: p.title.de })),
+  ru: photos.map((p) => ({ id: p.id, image: p.image, title: p.title.ru })),
 }
 
 export default function Gallery({ language }: GalleryProps) {
