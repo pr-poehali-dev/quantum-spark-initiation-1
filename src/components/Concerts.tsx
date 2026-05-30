@@ -4,94 +4,109 @@ interface ConcertsProps {
 
 const translations = {
   en: {
-    heading: "Upcoming Concerts",
+    heading: "How I Work",
     learnMore: "Learn More",
+    price: "3,000 ₽",
+    duration: "60 min",
+    format: "Format",
+    cost: "Cost",
+    bookBtn: "Book Now",
   },
   de: {
-    heading: "Kommende Konzerte",
+    heading: "Wie ich arbeite",
     learnMore: "Mehr erfahren",
+    price: "3.000 ₽",
+    duration: "60 Min.",
+    format: "Format",
+    cost: "Kosten",
+    bookBtn: "Jetzt buchen",
   },
   ru: {
-    heading: "Предстоящие концерты",
+    heading: "Как я работаю",
     learnMore: "Подробнее",
+    price: "3 000 ₽",
+    duration: "60 мин",
+    format: "Формат",
+    cost: "Стоимость",
+    bookBtn: "Записаться",
   },
 }
 
-const concerts = {
+const services = {
   en: [
     {
-      date: "08.12.2024",
-      time: "18:00",
-      title: "Piano Recital",
-      venue: "Torhaus Hamburg",
-      location: "Hamburg",
+      title: "Individual Consultation",
+      description: "One-on-one session focused on your request — codependency, boundaries, inner grounding, or relationships",
+      format: "Online / In person",
+      duration: "60 min",
+      price: "3,000 ₽",
     },
     {
-      date: "16.12.2024",
-      time: "19:00",
-      title: "Piano Recital HFMT",
-      venue: "Hamburg, Orchestra Studio",
-      location: "Hamburg",
+      title: "Body-Awareness Session",
+      description: "Working with the body: locating tension, emotions, and resources through gentle somatic practices",
+      format: "Online / In person",
+      duration: "60 min",
+      price: "3,000 ₽",
     },
     {
-      date: "21.12.2024",
-      time: "17:00",
-      title: "Charity Concert",
-      venue: "Rathaus Zehlendorf, Burgersaal",
-      location: "Berlin",
+      title: "Codependency Work",
+      description: "A series of sessions to explore and transform codependent patterns in relationships",
+      format: "Online / In person",
+      duration: "60 min",
+      price: "3,000 ₽",
     },
   ],
   de: [
     {
-      date: "08.12.2024",
-      time: "18:00",
-      title: "Klavierabend",
-      venue: "Torhaus Hamburg",
-      location: "Hamburg",
+      title: "Einzelberatung",
+      description: "Einzelsitzung, die sich auf Ihren Bedarf konzentriert — Koabhängigkeit, Grenzen oder innere Verankerung",
+      format: "Online / Persönlich",
+      duration: "60 Min.",
+      price: "3.000 ₽",
     },
     {
-      date: "16.12.2024",
-      time: "19:00",
-      title: "Klavierabend HFMT",
-      venue: "Hamburg, Orchesterstudio",
-      location: "Hamburg",
+      title: "Körperbewusstseinssitzung",
+      description: "Arbeit mit dem Körper: Spannungen, Emotionen und Ressourcen durch sanfte somatische Praktiken",
+      format: "Online / Persönlich",
+      duration: "60 Min.",
+      price: "3.000 ₽",
     },
     {
-      date: "21.12.2024",
-      time: "17:00",
-      title: "Benefizkonzert",
-      venue: "Rathaus Zehlendorf, Burgersaal",
-      location: "Berlin",
+      title: "Koabhängigkeitsarbeit",
+      description: "Eine Reihe von Sitzungen zur Erkundung und Transformation koabhängiger Muster",
+      format: "Online / Persönlich",
+      duration: "60 Min.",
+      price: "3.000 ₽",
     },
   ],
   ru: [
     {
-      date: "8 декабря 2024",
-      time: "18:00",
-      title: "Сольный концерт",
-      venue: "Торхаус Гамбург",
-      location: "Гамбург",
+      title: "Индивидуальная консультация",
+      description: "Личная встреча, сфокусированная на вашем запросе — созависимость, границы, опора в себе или отношения",
+      format: "Онлайн / Очно",
+      duration: "60 мин",
+      price: "3 000 ₽",
     },
     {
-      date: "16 декабря 2024",
-      time: "19:00",
-      title: "Концерт в HFMT",
-      venue: "Гамбург, Оркестровая студия",
-      location: "Гамбург",
+      title: "Сессия телесного осознавания",
+      description: "Работа с телом: обнаружение напряжений, эмоций и ресурсов через мягкие соматические практики",
+      format: "Онлайн / Очно",
+      duration: "60 мин",
+      price: "3 000 ₽",
     },
     {
-      date: "21 декабря 2024",
-      time: "17:00",
-      title: "Благотворительный концерт",
-      venue: "Ратуша Целендорф, Бургерзаль",
-      location: "Берлин",
+      title: "Работа с созависимостью",
+      description: "Серия сессий для исследования и трансформации созависимых паттернов в отношениях",
+      format: "Онлайн / Очно",
+      duration: "60 мин",
+      price: "3 000 ₽",
     },
   ],
 }
 
 export default function Concerts({ language }: ConcertsProps) {
   const t = translations[language]
-  const concertList = concerts[language]
+  const serviceList = services[language]
 
   return (
     <section id="concerts" className="py-32 md:py-48 bg-background">
@@ -102,22 +117,23 @@ export default function Concerts({ language }: ConcertsProps) {
         </div>
 
         <div className="space-y-8">
-          {concertList.map((concert, idx) => (
+          {serviceList.map((service, idx) => (
             <div key={idx} className="pb-8 border-b border-taupe/30 last:border-b-0">
               <div className="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-8 items-start">
                 <div>
-                  <h3 className="text-charcoal mb-1">{concert.date}</h3>
-                  <small className="text-taupe">{concert.time}</small>
+                  <small className="text-taupe uppercase tracking-wider text-xs mb-2 block">{t.cost}</small>
+                  <h3 className="text-charcoal mb-1">{service.price}</h3>
+                  <small className="text-taupe">{service.duration}</small>
                 </div>
                 <div className="md:col-span-2">
-                  <h3 className="text-charcoal mb-1">{concert.title}</h3>
-                  <p className="text-charcoal/70 mb-1">{concert.venue}</p>
-                  <small className="text-taupe">{concert.location}</small>
+                  <h3 className="text-charcoal mb-2">{service.title}</h3>
+                  <p className="text-charcoal/70 mb-1">{service.description}</p>
+                  <small className="text-taupe">{service.format}</small>
                 </div>
                 <div className="flex justify-start md:justify-end">
-                  <button className="text-gold hover:text-gold/80 transition-colors text-sm font-medium">
-                    {t.learnMore} &rarr;
-                  </button>
+                  <a href="#contact" className="text-gold hover:text-gold/80 transition-colors text-sm font-medium">
+                    {t.bookBtn} &rarr;
+                  </a>
                 </div>
               </div>
             </div>

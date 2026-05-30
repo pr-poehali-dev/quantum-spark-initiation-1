@@ -8,42 +8,45 @@ interface ContactProps {
 const translations = {
   en: {
     heading: "Contact",
-    subheading: "Get in Touch",
+    subheading: "Book a consultation or ask a question",
     email: "Email",
     phone: "Phone",
-    message: "Message",
+    message: "Your request",
     send: "Send Message",
-    location: "Location",
-    name: "Name",
-    successMessage: "Message sent successfully!",
-    locationValue: "Berlin, Germany",
-    phoneValue: "+49 (30) 123-4567",
+    location: "Session format",
+    name: "Your name",
+    successMessage: "Your message has been sent! I will get back to you soon.",
+    locationValue: "Online / In person",
+    phoneValue: "+7 (000) 000-00-00",
+    messagePlaceholder: "Tell me briefly about what brought you here and what you'd like to work on",
   },
   de: {
     heading: "Kontakt",
-    subheading: "Treten Sie mit uns in Kontakt",
+    subheading: "Buchen Sie eine Beratung oder stellen Sie eine Frage",
     email: "E-Mail",
     phone: "Telefon",
-    message: "Nachricht",
+    message: "Ihr Anliegen",
     send: "Nachricht senden",
-    location: "Standort",
-    name: "Name",
-    successMessage: "Nachricht erfolgreich gesendet!",
-    locationValue: "Berlin, Deutschland",
-    phoneValue: "+49 (30) 123-4567",
+    location: "Sitzungsformat",
+    name: "Ihr Name",
+    successMessage: "Ihre Nachricht wurde gesendet! Ich melde mich bald bei Ihnen.",
+    locationValue: "Online / Persönlich",
+    phoneValue: "+7 (000) 000-00-00",
+    messagePlaceholder: "Erzählen Sie mir kurz, was Sie hierher geführt hat",
   },
   ru: {
-    heading: "Контакты",
-    subheading: "Свяжитесь с нами",
+    heading: "Запись",
+    subheading: "Запишитесь на консультацию или задайте вопрос",
     email: "Эл. почта",
     phone: "Телефон",
-    message: "Сообщение",
+    message: "Ваш запрос",
     send: "Отправить",
-    location: "Город",
-    name: "Имя",
-    successMessage: "Сообщение успешно отправлено!",
-    locationValue: "Берлин, Германия",
-    phoneValue: "+49 (30) 123-4567",
+    location: "Формат работы",
+    name: "Ваше имя",
+    successMessage: "Сообщение отправлено! Я свяжусь с вами в ближайшее время.",
+    locationValue: "Онлайн / Очно",
+    phoneValue: "+7 (000) 000-00-00",
+    messagePlaceholder: "Расскажите кратко, что привело вас сюда и с чем хотите поработать",
   },
 }
 
@@ -55,7 +58,7 @@ export default function Contact({ language }: ContactProps) {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
 
-    const mailtoLink = `mailto:hello@example.com?subject=${encodeURIComponent(`New message from ${formData.name}`)}&body=${encodeURIComponent(`From: ${formData.email}\n\n${formData.message}`)}`
+    const mailtoLink = `mailto:hello@example.com?subject=${encodeURIComponent(`Запись на консультацию от ${formData.name}`)}&body=${encodeURIComponent(`От: ${formData.email}\n\nЗапрос:\n${formData.message}`)}`
     window.location.href = mailtoLink
 
     setSubmitted(true)
@@ -86,6 +89,10 @@ export default function Contact({ language }: ContactProps) {
             <div>
               <small className="font-medium text-charcoal/70 mb-2 block">{t.location}</small>
               <p className="text-charcoal">{t.locationValue}</p>
+            </div>
+            <div className="pt-4 border-t border-taupe/20">
+              <p className="text-charcoal font-medium text-lg">3 000 ₽</p>
+              <small className="text-taupe">за консультацию · 60 минут</small>
             </div>
           </div>
 
@@ -118,7 +125,7 @@ export default function Contact({ language }: ContactProps) {
             </div>
             <div>
               <textarea
-                placeholder={t.message}
+                placeholder={t.messagePlaceholder}
                 rows={5}
                 value={formData.message}
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}

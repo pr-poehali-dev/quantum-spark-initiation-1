@@ -8,22 +8,25 @@ interface NavigationProps {
 
 const translations = {
   en: {
-    biography: "Biography",
-    concerts: "Concerts",
+    logo: "Body Therapy",
+    biography: "About Me",
+    concerts: "Services",
     gallery: "Gallery",
-    contact: "Contact",
+    contact: "Book Now",
   },
   de: {
-    biography: "Biographie",
-    concerts: "Konzerte",
+    logo: "Körpertherapie",
+    biography: "Über mich",
+    concerts: "Leistungen",
     gallery: "Galerie",
-    contact: "Kontakt",
+    contact: "Buchen",
   },
   ru: {
-    biography: "Биография",
-    concerts: "Концерты",
+    logo: "Телесная терапия",
+    biography: "Обо мне",
+    concerts: "Услуги",
     gallery: "Галерея",
-    contact: "Контакт",
+    contact: "Записаться",
   },
 }
 
@@ -65,8 +68,8 @@ export default function Navigation({ language, onLanguageChange }: NavigationPro
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <div className={`${logoColor} font-serif text-2xl font-normal tracking-wide transition-colors duration-300`}>
-            A. Voss
+          <div className={`${logoColor} font-serif text-xl font-normal tracking-wide transition-colors duration-300`}>
+            {t.logo}
           </div>
 
           {/* Desktop Menu */}
