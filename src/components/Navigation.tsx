@@ -8,21 +8,21 @@ interface NavigationProps {
 
 const translations = {
   en: {
-    logo: "Body Therapy",
+    logo: "A. Mitaeva",
     biography: "About Me",
     concerts: "Services",
     gallery: "Gallery",
     contact: "Book Now",
   },
   de: {
-    logo: "Körpertherapie",
+    logo: "A. Mitaeva",
     biography: "Über mich",
     concerts: "Leistungen",
     gallery: "Galerie",
     contact: "Buchen",
   },
   ru: {
-    logo: "Телесная терапия",
+    logo: "А. Митаева",
     biography: "Обо мне",
     concerts: "Услуги",
     gallery: "Галерея",

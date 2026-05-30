@@ -4,7 +4,8 @@ interface BiographyProps {
 
 const translations = {
   en: {
-    heading: "About Me",
+    heading: "Anastasia Mitaeva",
+    subheading: "Body Therapist & Psychologist",
     paragraphs: [
       "I am a psychologist specializing in body-oriented therapy. My work focuses on two key areas: codependency and finding your inner ground — that stable sense of self that helps you navigate life with confidence.",
       "Body therapy is based on the understanding that our emotions, fears, and patterns of behavior live not only in our minds but also in our bodies. Through gentle body-awareness practices, we learn to hear the signals our body sends us and transform them into a resource.",
@@ -14,7 +15,8 @@ const translations = {
     ],
   },
   de: {
-    heading: "Über mich",
+    heading: "Anastasia Mitaeva",
+    subheading: "Körpertherapeutin & Psychologin",
     paragraphs: [
       "Ich bin Psychologin und spezialisiert auf körperorientierte Therapie. Meine Arbeit konzentriert sich auf zwei Schlüsselbereiche: Koabhängigkeit und das Finden der inneren Verankerung.",
       "Körpertherapie basiert auf dem Verständnis, dass unsere Emotionen, Ängste und Verhaltensmuster nicht nur in unserem Geist, sondern auch in unserem Körper leben.",
@@ -24,7 +26,8 @@ const translations = {
     ],
   },
   ru: {
-    heading: "Обо мне",
+    heading: "Митаева Анастасия",
+    subheading: "Телесный терапевт · Психолог",
     paragraphs: [
       "Я — психолог, специализирующийся на телесной терапии. Моя работа сосредоточена в двух ключевых направлениях: созависимость и поиск опоры в себе — того устойчивого ощущения себя, которое помогает уверенно идти по жизни.",
       "Телесная терапия основана на понимании, что наши эмоции, страхи и поведенческие паттерны живут не только в уме, но и в теле. Через мягкие практики телесного осознавания мы учимся слышать сигналы, которые подаёт нам тело, и превращать их в ресурс.",
@@ -40,20 +43,35 @@ export default function Biography({ language }: BiographyProps) {
 
   return (
     <section id="biography" className="py-24 md:py-36 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-3xl mx-auto">
-        <h2 className="text-charcoal mb-12 text-pretty">
-          {t.heading}
-        </h2>
-        <div className="space-y-6">
-          {t.paragraphs.map((paragraph, index) => (
-            <p
-              key={index}
-              className="text-lg leading-relaxed text-charcoal/90 animate-fade-in-up"
-              style={{ animationDelay: `${index * 100}ms` }}
-            >
-              {paragraph}
-            </p>
-          ))}
+      <div className="max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-start">
+          {/* Photo */}
+          <div className="relative">
+            <img
+              src="https://cdn.poehali.dev/projects/d91b2ad5-c443-4d26-931c-a3d6914ae157/bucket/9693913a-4089-4d3d-87c1-9532e82beed0.jpeg"
+              alt="Митаева Анастасия"
+              className="w-full object-cover"
+              style={{ aspectRatio: "3/4" }}
+            />
+          </div>
+
+          {/* Text */}
+          <div>
+            <h2 className="text-charcoal mb-2">{t.heading}</h2>
+            <p className="text-gold text-sm font-medium tracking-widest uppercase mb-10">{t.subheading}</p>
+            <div className="line-accent mb-10"></div>
+            <div className="space-y-6">
+              {t.paragraphs.map((paragraph, index) => (
+                <p
+                  key={index}
+                  className="text-base leading-relaxed text-charcoal/90 animate-fade-in-up"
+                  style={{ animationDelay: `${index * 100}ms` }}
+                >
+                  {paragraph}
+                </p>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>
