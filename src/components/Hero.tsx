@@ -34,8 +34,8 @@ export default function Hero({ language }: HeroProps) {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img
-          src="https://cdn.poehali.dev/projects/d91b2ad5-c443-4d26-931c-a3d6914ae157/files/517cca37-347e-4a49-9d70-01f8b2dc31a1.jpg"
-          alt="Therapy room"
+          src="https://cdn.poehali.dev/projects/d91b2ad5-c443-4d26-931c-a3d6914ae157/bucket/1f90c268-e05c-437e-89d3-9404d84b3135.jpeg"
+          alt="Психолог"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-charcoal/45"></div>
