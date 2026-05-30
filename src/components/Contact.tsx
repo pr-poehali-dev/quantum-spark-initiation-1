@@ -58,7 +58,7 @@ export default function Contact({ language }: ContactProps) {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
 
-    const mailtoLink = `mailto:hello@example.com?subject=${encodeURIComponent(`Запись на консультацию от ${formData.name}`)}&body=${encodeURIComponent(`От: ${formData.email}\n\nЗапрос:\n${formData.message}`)}`
+    const mailtoLink = `mailto:ya.nastya144@gmail.com?subject=${encodeURIComponent(`Запись на консультацию от ${formData.name}`)}&body=${encodeURIComponent(`От: ${formData.email}\n\nЗапрос:\n${formData.message}`)}`
     window.location.href = mailtoLink
 
     setSubmitted(true)
@@ -80,7 +80,7 @@ export default function Contact({ language }: ContactProps) {
           <div className="space-y-8 animate-fade-in-up">
             <div>
               <small className="font-medium text-charcoal/70 mb-2 block">{t.email}</small>
-              <p className="text-charcoal">hello@example.com</p>
+              <a href="mailto:ya.nastya144@gmail.com" className="text-charcoal hover:text-gold transition-colors">ya.nastya144@gmail.com</a>
             </div>
             <div>
               <small className="font-medium text-charcoal/70 mb-2 block">{t.phone}</small>
