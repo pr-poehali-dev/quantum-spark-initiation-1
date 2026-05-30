@@ -90,6 +90,14 @@ export default function Contact({ language }: ContactProps) {
               <small className="font-medium text-charcoal/70 mb-2 block">{t.location}</small>
               <p className="text-charcoal">{t.locationValue}</p>
             </div>
+            <div>
+              <small className="font-medium text-charcoal/70 mb-2 block">Instagram</small>
+              <a href="https://instagram.com/kofermenta_psiholog" target="_blank" rel="noopener noreferrer" className="text-charcoal hover:text-gold transition-colors">@kofermenta_psiholog</a>
+            </div>
+            <div>
+              <small className="font-medium text-charcoal/70 mb-2 block">Telegram</small>
+              <a href="https://t.me/kofermenta" target="_blank" rel="noopener noreferrer" className="text-charcoal hover:text-gold transition-colors">@kofermenta</a>
+            </div>
             <div className="pt-4 border-t border-taupe/20">
               <p className="text-charcoal font-medium text-lg">3 000 ₽</p>
               <small className="text-taupe">за консультацию · 60 минут</small>
